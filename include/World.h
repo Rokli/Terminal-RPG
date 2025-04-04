@@ -3,17 +3,30 @@
 
 #include <vector>
 #include <ncurses.h>
-#include <Player.h>
+#include "Player.h"
+#include "Enemy.h"
 
 class World{
     private:
         std::vector<std::vector<char>> _mapVillage;
-        int dx;
-        int dy;       
+        int _dx,_dy,_x,_y;
+        bool canMove(int dy,int dx);
     public:
         World();
         void render();
-        Player *_player; 
+        Enemy *_enemy;
+
+		int getX();
+		int getY();
+
+        void decreaseX();
+		void decreaseY();
+
+		void increaseX();
+		void increaseY();
+
+        void setX(int x);
+        void setY(int y);
 };
 
 #endif

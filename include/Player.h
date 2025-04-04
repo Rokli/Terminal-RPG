@@ -2,7 +2,8 @@
 #define PLAYER_H
 #include <string>
 
-class Player{
+class Player
+{
 	private:
 		std::string _name;
 		int _health;
@@ -17,8 +18,9 @@ class Player{
 		void levelUp();
 		void takeDamage(int damage);
 		void heal(int amount);
-		int getX();
-		int getY();
+		std::string getName();
+		int getHealth();
+
 };
 
 #endif 

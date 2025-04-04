@@ -1,5 +1,7 @@
 #include <ncurses.h>
 #include "include/World.h"
+#include "include/Enemy.h"
+#include "include/Battle.h"
 
 int main() {
     initscr();
@@ -11,8 +13,10 @@ int main() {
     World *world = new World();
 
     Player *player = new Player("Hero",100,1);
-    world->_player = player;
-
+    Enemy *enemy = new Enemy("Goblin",100,1,1);
+    Battle *battle = new Battle(player,enemy);
+    world->setX(1);
+    world->setY(8);
     bool running = true;
 
 
@@ -23,20 +27,26 @@ int main() {
         mvprintw(1, 0, "Move - WASD, Q - exit");
         mvprintw(2, 0, "\n");
         world->render();
-
+        
         int ch = getch();
         switch (ch) {
             case 'q':
                 running = false;
                 break;
             case 'w':
-                
+                world->decreaseY();
                 break;
             case 's':
+                world->increaseY();
                 break;
             case 'a':
+                world->decreaseX();
                 break;
             case 'd':
+                world->increaseX();
+                break;
+            case 'b':
+                battle->render();
                 break;
         }
 

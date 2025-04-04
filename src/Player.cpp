@@ -20,10 +20,12 @@ void Player::heal(int amount)
 
 }
 
-int Player::getX(){
-    return this->x;
+std::string Player::getName()
+{
+    return _name;
 }
 
-int Player::getY(){
-    return this->y;
+int Player::getHealth()
+{
+    return this->_health;
 }
