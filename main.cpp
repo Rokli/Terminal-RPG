@@ -13,7 +13,7 @@ int main() {
     World *world = new World();
 
     Player *player = new Player("Hero",100,1);
-    Enemy *enemy = new Enemy("Goblin",100,1,1);
+    Enemy *enemy = new Enemy("Goblin",100,1);
     Battle *battle = new Battle(player,enemy);
     world->setX(1);
     world->setY(8);

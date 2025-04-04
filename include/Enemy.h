@@ -3,19 +3,12 @@
 
 #include <string>
 #include "Player.h"
+#include "Character.h"
 
-class Enemy{
-    private:
-        std::string _name;
-        int _health;
-        int _xp;
-        int _damage;
+class Enemy : public Character
+{
     public:
-        Enemy(std::string name, int health, int damage, int xp);
-        void getDamage(Player *Player);
-        void decreaseHealth(int damage);
-        std::string getName();
-        int getHealth();
+        using Character::Character;
 };
 
 #endif 
